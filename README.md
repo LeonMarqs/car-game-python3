@@ -6,4 +6,4 @@ A simple car game made with Pygame in Python 3
 ## Screenshot
 ![screenshot](https://github.com/LeonMarqs/car-game-python3/blob/master/screenshot-car.png)
 
-## The code is incomplete, needs some improvements (bugs solution and new features). If you can help me, I'd be grateful.
+## The code is incomplete, it needs some improvements (bugs solution and new features). If you can help me, I'd be grateful.
