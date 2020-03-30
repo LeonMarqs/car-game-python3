@@ -1,13 +1,13 @@
 import pygame, random, sys
 from pygame.locals import *
 
-RANDOM_X = [180, 315, 450]
+RANDOM_X = [140, 295, 440, 588] #140, 295, 440, 588
 
-SCREEN_WIDHT = 800
+SCREEN_WIDHT = 900
 SCREEN_HEIGHT = 600
 GAME_SPEED = 5
 
-X = 315
+X = 350
 Y = 100
 
 #max x_RIGHT = 477 max x_LEFT =  150
@@ -16,7 +16,7 @@ Y = 100
 #X_ENEMIES = random.choice(RANDOM_X)
 #Y_ENEMIES = random.randint(700, 1500)
 
-FONT = "8-Bit-Madness.ttf"
+FONT = "font/8-Bit-Madness.ttf"
 
 pygame.init()
 
@@ -28,7 +28,7 @@ explosion_song = 'assets/audio/explosion.mp3'
 SCREEN = pygame.display.set_mode((SCREEN_WIDHT, SCREEN_HEIGHT))
 pygame.display.set_caption("Cars - obstáculos")
 
-BACKGROUND = pygame.image.load('assets/background2.png')
+BACKGROUND = pygame.image.load('assets/background.png')
 
 EXPLOSION_IMAGE = pygame.image.load('assets/explosion.png').convert_alpha()
 EXPLOSION_IMAGE = pygame.transform.scale(EXPLOSION_IMAGE, (100, 200))
@@ -174,7 +174,7 @@ def text_objects(text, font):
 
 def Gameover():
 
-    SCREEN.blit(pygame.image.load("assets/background2.png"), (0,0))
+    SCREEN.blit(pygame.image.load("assets/background.png"), (0,0))
     largeText = pygame.font.SysFont("elephant",60)
     TextSurf, TextRect = text_objects("GameOver", largeText)
     TextRect.center = ((SCREEN_WIDHT/2),(SCREEN_HEIGHT/2))
@@ -197,9 +197,9 @@ while Leonardo:
 
         keys = pygame.key.get_pressed()
 
-    if keys[pygame.K_LEFT] and player.rect[0] > 155:
+    if keys[pygame.K_LEFT] and player.rect[0] > 110:
         player.moveleft(5)
-    if keys[pygame.K_RIGHT] and player.rect[0] < 470:
+    if keys[pygame.K_RIGHT] and player.rect[0] < 620:
         player.moveright(5)
 
     collide = (pygame.sprite.collide_mask(player, ambulance)
@@ -223,7 +223,7 @@ while Leonardo:
     car_b.update()
 
     SCREEN.blit(BACKGROUND, (0, 0))
-
+    
     player.draw(SCREEN)
     ambulance.draw(SCREEN)
     cop.draw(SCREEN)
