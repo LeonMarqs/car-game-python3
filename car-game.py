@@ -19,11 +19,13 @@ Y = 100
 FONT = "font/8-Bit-Madness.ttf"
 
 pygame.init()
-
 pygame.mixer.init()
-game_over_music = 'assets/audio/game-over.mp3'
-explosion_song = 'assets/audio/explosion.mp3'
+pygame.mixer.music.load('assets/audio/background.ogg')
+pygame.mixer.music.play();
 
+
+game_over_music = 'assets/audio/game-over.ogg'
+explosion_song = 'assets/audio/explosion.ogg'
 
 SCREEN = pygame.display.set_mode((SCREEN_WIDHT, SCREEN_HEIGHT))
 pygame.display.set_caption("Cars - obstáculos")
@@ -142,8 +144,6 @@ class Car2(pygame.sprite.Sprite):
     def draw(self, surface):
         surface.blit(self.image, (self.rect[0], self.rect[1]))
 
-
-
 ################################################################################
 
 player = Car()
@@ -170,7 +170,6 @@ white = (255, 255, 255)
 def text_objects(text, font):
     textsurface = font.render(text, True, (0,0,0))
     return textsurface, textsurface.get_rect()
-
 
 def Gameover():
 
@@ -211,6 +210,7 @@ while Leonardo:
         pygame.display.flip()
         SCREEN.blit(EXPLOSION_IMAGE, (player.rect[0] + 50, player.rect[1] + 50))
         pygame.display.flip()
+        pygame.mixer.music.stop()
         pygame.mixer.music.load(explosion_song)
         pygame.mixer.music.play()
         pygame.time.wait(1000)
@@ -232,7 +232,6 @@ while Leonardo:
     ambulance.movey()
     cop.movey()
     car_b.movey()
-
 
     pygame.display.flip()
 
