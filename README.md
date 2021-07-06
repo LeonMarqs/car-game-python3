@@ -1,13 +1,22 @@
 # Car-game-python3
 A simple car game made with Pygame in Python 3
 
-### The assets I took from web and edit in Photoshop
+## Objective
+Avoid the incoming cars and survive as long as possible :)
 
-## Screenshot
-![screenshot](https://github.com/LeonMarqs/car-game-python3/blob/master/screenshot-car.png)
+## Getting Started
+1. Clone this repository
+1. In the project folder, type `pip install pygame`
+1. From root project folder, type `python src/car-game.py`
 
-## Dependence
-* pygame
+## Screenshots
+![Screenshot](https://github.com/LeonMarqs/car-game-python3/blob/master/screenshot-car.png)
 
-### Contribution
-If you have any Improvements/Ideas/Refactors feel free to contact me or make a Pull Request. The code needs still alot of refactoring as it is right now, so i appreciate any kind of Contribution
+![Screenshot - Snow](https://github.com/LeonMarqs/car-game-python3/blob/master/screenshot-car-snow.png)
+
+## Dependences
+* [Pygame](https://www.pygame.org/news)
+
+## Assets
+* The image assets I took from web and edit them in Photoshop
+* Background music: [Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music](https://www.youtube.com/watch?v=l7SwiFWOQqM)
