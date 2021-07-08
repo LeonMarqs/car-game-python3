@@ -48,6 +48,7 @@ LOAD_EXPLOSION_IMAGE = pygame.transform.scale(LOAD_EXPLOSION_IMAGE, (100, 200))
 class Player(pygame.sprite.Sprite):
 
 	speed = 5
+	speed_vertical = 10  # Added vertical speed variable
 
 	def __init__(self):
 		pygame.sprite.Sprite.__init__(self)
@@ -65,10 +66,10 @@ class Player(pygame.sprite.Sprite):
 		self.rect[0] -= self.speed
 
 	def moveUp(self):
-		self.rect[1] -= self.speed
+		self.rect[1] -= self.speed_vertical  # Changed vertical speed from 5 to 10, makes game-play more balanced
 
 	def moveDown(self):
-		self.rect[1] += self.speed
+		self.rect[1] += self.speed_vertical  # Changed vertical speed from 5 to 10, makes game-play more balanced
 
 	def changeImage(self, imageUrl):
 		self.image = pygame.image.load(imageUrl).convert_alpha()
